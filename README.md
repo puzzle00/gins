@@ -25,6 +25,14 @@ project/-
 ## Installation
 > In order to install a GINS-downloaded project, `git clone` the repo to a directory you own. Then run the `setup<OS>.py` file corresponding to your OS. For Linux or Mac users, one of these options must be added to the command:
 ```
+-b - Bash shell
+-c - C shell
+-f - fish shell
+-t - TCSH
+-z - Z shell
+-k - Korn Shell
+```
+> If your preferred shell isn't on here, go over to the Issues page and put on an issue!
 > This file will create a new directory in your home directory (`.gins`) if it does not already exist and permanently edit your `PYTHONPATH` to add `.gins` to it, again, if that has not been done before. It then takes all files in the GPTH and puts them in their folder (named after the package name) in `.gins`For Linux & MacOS users, this may involve changing your `.<Shell>rc` or `.<Shell>_profile` file in order for the changes to be permanent. The home directory is as follows:
 > - For Linux users, this is `/home/username`.
 > - For Mac users, this is `/Users/username`.
