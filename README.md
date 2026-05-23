@@ -39,8 +39,8 @@ project/-
 > - For Windows users, this is `C:\Users\username\`.
 >
 > ### Supported OSs:
->> Windows
->> Mac
->> Linux
+>> -  Windows
+>> - Mac
+>> - Linux
 > ### Using your GINS-installed packages
 >> Gins packages can be used like any Python package. Just `import` them.
