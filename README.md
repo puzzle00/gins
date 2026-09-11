@@ -30,7 +30,7 @@ project
         |- readme.md
 ```
 > Copy the GINS header bar (md format) from this repo and put it at the top of your README.
-> > Package Name Format: the package's name or the package's name with `_`'s replaced with `-`'s.
+>
 ## Installation
 > In order to install a GINS-downloaded project, `git clone` the repo to a directory you own. Then run the `setup<OS>.py` file corresponding to your OS. For Linux or Mac users, one of these options must be added to the command:
 ```
