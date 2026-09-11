@@ -14,8 +14,8 @@ dependencies=[
 "pip:yourproject", # For pip projects, prepend the project name (No PPAs for now) with "pip:"
 "gins:username/reponame" # For gins projects, follow this syntax.
 ]
-
 ```
+> After the `[gins]` header, you can put anything you want and GINS will ignore it.
 > A GINS-enabled project may look like:
 ```
 project
