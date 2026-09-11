@@ -45,7 +45,7 @@ project
 > - For Linux users, this is `/home/username`.
 > - For Mac users, this is `/Users/username`.
 > - For Windows users, this is `C:\Users\username\`.
->
+> Then you can delete the installation folder.
 > ### Supported OSs:
 >> -  Windows
 >> - Mac
