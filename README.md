@@ -1,4 +1,4 @@
-# gins
+# gins - SELF CONTAINED PACKAGE MANAGER
 GitHub Install, a system for installing Python packages by `git clone`'ing them.
 ## Reasoning
 > I own an Ubuntu computer, and am annoyed by the thing where you have to be in a venv to get packages, or use the lengthy `--break_system_packages` flag. This is for helping people with the same problem. Also, I am having trouble with uploadindg to PyPi.
