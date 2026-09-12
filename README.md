@@ -15,7 +15,7 @@ dependencies=[
 "gins:username/reponame" # For gins projects, follow this syntax.
 ]
 ```
-> After the `[gins]` header, you can put anything you want and GINS will ignore it.
+> After (or before) the `[gins]` header, you can put anything you want and GINS will ignore it. (Actually, all you need is for there to be a valid `[gins]` header and content) 
 > A GINS-enabled project may look like:
 ```
 project
