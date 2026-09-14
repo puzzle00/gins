@@ -28,9 +28,26 @@ def ginstall(package_url):
 def pipin(package):
     """ Install a package from Pip """
     ...
-def fix_dependencies(gpth):
+def fix_dependencies(deps):
     """ Run ginstall() or pipin() as per the gins. """
-    ...
+    cons.log("Looking up dependencies...")
+    try:
+        prefixes=[]
+        names=[]
+        for i in deps:
+            prefixes.append(i.split(":")[0])
+            packages.append(i.split(":")[0])
+        for i in range(len(deps)):
+            if prefixes[i]=="pip":
+                pipin(packages[i])
+            else:
+                ginstall(packages[i])
+    except Exception as e:
+        cons.log(f"Error while checking and installing dependencies: {e}", style="danger")
+        sys.exit()
+    else:
+        cons.log("Successfully looked up and installed dependencies.", style="success")
+
 def do_we_have_it(package):
     """ Do we have it? """
     package = package.lower.replace("-","_")
