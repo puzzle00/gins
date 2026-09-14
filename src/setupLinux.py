@@ -44,4 +44,4 @@ def stuff_and_edit_config()
 def clean_up():
     """ Cleans up the temporary curr_install folder. Should just delete the entire folder + remake it, poss. issue (!)"""
 def main():
-    """ For now it is a donothing. Should open the pa"""
+    """Run all the functions in order using the gpth"""
