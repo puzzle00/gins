@@ -1,6 +1,13 @@
-import sys, subproccess, tomllib, importlib.util
-from rich.console impoort Console
-from rich.theme import Theme
+import sys, subprocess, tomllib, importlib.util
+
+try:
+    from rich.console impoort Console
+    from rich.theme import Theme
+except ImportError:
+    print("Rich package not found. Installing it now...")
+    subprocess.run([sys.executable, "-m", "install", "rich", "--break-system-packages"])
+    from rich.console impoort Console
+    from rich.theme import Theme
 
 """ ALL PACKAGES SHOULD GIVE GUI OUTPUT VIA A GLOBAL CONSOLE OBJECT!!! """
 custom_theme = Theme(
@@ -14,7 +21,7 @@ def parse_gpth():
         with open("../GPTH.toml", "rb") as f:
             parsed=tomllib.load(f)
     except FileNotFoundError:
-        cons.log("Can't find the GPTH.toml file. This project is incorrectly set up. Please contact the author.", style="danger")
+        cons.log("Can't find the GPTH.toml file. This project is incorrectly set up, please contact the author.", style="danger")
         sys.exit()
     except:
         cons.log("Error parsing GPTH.toml file.", style="danger")
@@ -27,7 +34,22 @@ def ginstall(package_url):
     ...
 def pipin(package):
     """ Install a package from Pip """
-    ...
+    cons.log(f"Installing {package} from Pip...", style="info")
+    try:
+        exit_code=subprocess.run([sys.executable, "-m", "pip", 'install', package, "--break-system-packages"])
+        if exit_code!=0:
+            cons.log(f"Error while Pip installing {package}", style="danger")
+            sys.exit()
+        else:
+            if do_we_have_it(package):
+                cons.log(f'Successfully installed {package} from Pip', style='success')
+            else:
+                cons.log(f'Pip installed {package}, but it cannot be found.', style='danger')
+                sys.exit()
+    except Exception as e:
+        cons.log(f"Exception while installing {package} from pip: {e}")
+        sys.exit()
+
 def fix_dependencies(deps):
     """ Run ginstall() or pipin() as per the gins. """
     cons.log("Looking up dependencies...")
