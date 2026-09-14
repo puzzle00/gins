@@ -1,7 +1,12 @@
-import sys, subproccess, tomllib, importlib.util, rich
+import sys, subproccess, tomllib, importlib.util
+from rich.console impoort Console
+from rich.theme import Theme
 
 """ ALL PACKAGES SHOULD GIVE GUI OUTPUT VIA A GLOBAL CONSOLE OBJECT!!! """
-
+custom_theme = Theme(
+{"info": "bold cyan", "warning": "yellow", "danger": "bold red", "success":"bold green"}
+)
+cons = Console(theme=custom_theme)
 def parse_gpth():
     """ GPTH to dict stuff """
     ...
