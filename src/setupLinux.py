@@ -9,7 +9,19 @@ custom_theme = Theme(
 cons = Console(theme=custom_theme)
 def parse_gpth():
     """ GPTH to dict stuff """
-    ...
+    cons.log("Parsing gpth file...", style="info")
+    try:
+        with open("../GPTH.toml", "rb") as f:
+            parsed=tomllib.load(f)
+    except FileNotFoundError:
+        cons.log("Can't find the GPTH.toml file. This project is incorrectly set up. Please contact the author.", style="danger")
+        sys.exit()
+    except:
+        cons.log("Error parsing GPTH.toml file.", style="danger")
+        sys.exit()
+    else:
+        cons.log("Successfully parsed GPTH.toml file.", style="success")
+        return parsed
 def ginstall(package_url):
     """ Get a package from github and GINS it. Best Practice: clone the file and use `subprocess.run(["python",f"../{name_of_package}/setup.py])` to run its setup."""
     ...
