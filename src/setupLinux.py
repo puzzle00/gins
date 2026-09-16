@@ -1,4 +1,4 @@
-import sys, subprocess, tomllib
+import sys, subprocess, tomllib, os, site
 from pathlib import Path
 from shutil import rmtree, copy
 
@@ -112,6 +112,11 @@ def stuff(files, pname): # THIS WHOLE FUNCTION IS SYSTEM
 
 def edit_config(files, pname):
     """Edits the .pth files"""
+    spac=site.getsitepackages()[0]
+    pathpath=os.path.join(spac,"ginspaths.pth")
+    
     # NOTE use absolute path, site.getsitepackages, ginspaths.pth
+    ginspath=os.abspath("~/.gins/")
+    pacpath=os.path.join(ginspath,pname)
 def main():
     """Run all the functions in order using the gpth"""
