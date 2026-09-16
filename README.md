@@ -3,14 +3,15 @@ GitHub Install, a system for installing Python packages by `git clone`'ing them.
 ## Reasoning
 > I own an Ubuntu computer, and am annoyed by the thing where you have to be in a venv to get packages, or use the lengthy `--break_system_packages` flag. This is for helping people with the same problem. Also, I am having trouble with uploading to PyPi.
 ## Use
-> If you wish to use gins, copy the `src` folder to your project repository and rename it `gins`. Then add a `gins.md` file next to the `gins` folder, and copy the Installation section of this file to it. In order to let GINS know where to find a file, make a `GPTH.toml` file, and follow the template provided. The GPTH file needs to look like this:
+> If you wish to use gins, copy the `src` folder to your project repository and rename it `gins`. Then add a `gins.md` file next to the `gins` folder, and copy the Installation section of this file to it. In order to let GINS know where to find a file, make a `GPTH.toml` file, and follow the template provided. All files will land in the folder they are put in. I The GPTH file needs to look like this:
 ```toml
 [gins] # required
-projectname="myproject" # Put your project's package name in here.
+projectname="myproject" # Required; put your project's package name in here.
 filenames=[ # required
-"src/__init__.py",
-"src/whatever.py",
-"src/quokka/*.py" # Put your file list in here, wildcards are OK!
+"__init__.py",
+"whatever.py",
+"quokka/*.py" # Put your file list in here, wildcards are OK!
+]
 dependencies=[
 "pip:yourproject", # For pip projects, prepend the project name (No PPAs for now) with "pip:"
 "gins:username/reponame" # For gins projects, follow this syntax.
@@ -24,12 +25,11 @@ dependencies=[
 ```
 project
         |- GPTH.toml
-        |- .gins/-
+        |- gins/-
         |        |- # gins files
         |
-        |- src/-
-        |      |- # your project
         |
+        | # Your project is best here.
         |- gins.md
         |- readme.md
 ```
