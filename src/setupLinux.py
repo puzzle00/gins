@@ -94,7 +94,7 @@ def do_we_have_it(package):
         return False
     return True
 
-def stuff(files, pname) # THIS WHOLE FUNCTION IS SYSTEM
+def stuff(files, pname): # THIS WHOLE FUNCTION IS SYSTEM
     """Stuffs the package"""
     cons.log("Installing package...", style="info")
     try:
