@@ -19,7 +19,7 @@ dependencies=[
 ```
 > After (or before) the `[gins]` header, you can put anything you want and GINS will ignore it. (Actually, all you need is for there to be a valid `[gins]` header and content)
 >
-> Your project should have a `__init__.py` file with a package import syntax in it (hehehe init/in it). If you are unfamiliar with `__init__.py` syntax, you put either `import .whatever` for `whatever.py` in the same folder as the `__init__.py` file, or `from .afolder import myfile` for `myfile.py` in `afolder` that is next to `__init__.py`.
+> Your project should have a `__init__.py` file with a package import syntax in it. If you are unfamiliar with `__init__.py` syntax, you put either `import .whatever` for `whatever.py` in the same folder as the `__init__.py` file, or `from .afolder import myfile` for `myfile.py` in `afolder` that is next to `__init__.py`.
 > 
 > A GINS-enabled project may look like:
 ```
