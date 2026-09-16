@@ -29,9 +29,20 @@ def parse_gpth():
     else:
         cons.log("Successfully parsed GPTH.toml file.", style="success")
         return parsed
+
 def ginstall(package_url):
     """ Get a package from github and GINS it. Best Practice: clone the file and use `subprocess.run(["python",f"../{name_of_package}/setup.py])` to run its setup."""
-    ...
+    cons.log(f"Getting gins package {package_url}...",style="info")
+    cons.log("Cloning package...", style="info")
+    subprocess.run(["git", "clone", f"https://github.com/{package_url}", "../package"])
+    cons.log("Package cloned.", style="success")
+    try:
+        cons.log(f"Running setup.py file for {package_url}.", style="info")
+        subprocess.run([sys.executable, "../package/gins/setupLinux.py"])
+    except Exception as e:
+        cons.log(f"An error occurred while running the dependency's setup file that was not caught: {e}",style='danger')
+        sys.exit()
+
 def pipin(package):
     """ Install a package from Pip """
     cons.log(f"Installing {package} from Pip...", style="info")
@@ -80,6 +91,7 @@ def do_we_have_it(package):
     return True
 def stuff_and_edit_config()
     """Stuffs and edits the config file for the current thing."""
+    # NOTE use absolute path, site.getsitepackages, ginspaths.pth
 def clean_up():
     """ Cleans up the temporary curr_install folder. Should just delete the entire folder + remake it, poss. issue (!)"""
 def main():
