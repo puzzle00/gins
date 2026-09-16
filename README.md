@@ -6,17 +6,20 @@ GitHub Install, a system for installing Python packages by `git clone`'ing them.
 > If you wish to use gins, copy the `src` folder to your project repository and rename it `gins`. Then add a `gins.md` file next to the `gins` folder, and copy the Installation section of this file to it. In order to let GINS know where to find a file, make a `GPTH.toml` file, and follow the template provided. The GPTH file needs to look like this:
 ```toml
 [gins] # required
+projectname="myproject" # Put your project's package name in here.
 filenames=[ # required
+"src/__init__.py",
 "src/whatever.py",
 "src/quokka/*.py" # Put your file list in here, wildcards are OK!
-]
 dependencies=[
 "pip:yourproject", # For pip projects, prepend the project name (No PPAs for now) with "pip:"
 "gins:username/reponame" # For gins projects, follow this syntax.
 ]
 ```
 > After (or before) the `[gins]` header, you can put anything you want and GINS will ignore it. (Actually, all you need is for there to be a valid `[gins]` header and content)
->  
+>
+> Your project should have a `__init__.py` file with a package import syntax in it (hehehe init/in it). If you are unfamiliar with `__init__.py` syntax, you put either `import .whatever` for `whatever.py` in the same folder as the `__init__.py` file, or `from .afolder import myfile` for `myfile.py` in `afolder` that is next to `__init__.py`.
+> 
 > A GINS-enabled project may look like:
 ```
 project
