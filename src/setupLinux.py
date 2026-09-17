@@ -13,30 +13,7 @@ except ImportError:
     from rich.theme import Theme
 
 """ ALL PACKAGES SHOULD GIVE GUI OUTPUT VIA A GLOBAL CONSOLE OBJECT!!! """
-custom_theme = Theme(discrete, isolated real numbers where the function is mathematically defined. It cannot be drawn as a solid, continuous line because an exponential function with a negative base (here, ￼
--5
-−
-5
-) does not produce real numbers for most values of ￼
-𝑥
-𝑥
-. ￼
-￼
-Reddit
-The Math Behind the Dots
-Desmos only graphs coordinates using real numbers on the standard ￼
-𝑥
-𝑦
-𝑥
-𝑦
--plane. When you raise a negative number to the power of ￼
-𝑥
-𝑥
-, the results alternate wildly between being real numbers and imaginary numbers:
-When ￼
-𝑥
-𝒙
- is an integer: The output is a real numb
+custom_theme = Theme(
 {"info": "bold cyan", "warning": "yellow", "danger": "bold red", "success":"bold green"}
 )
 cons = Console(theme=custom_theme)
