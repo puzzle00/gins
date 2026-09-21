@@ -36,15 +36,7 @@ project
 > Copy the GINS header bar (md format) from this repo and put it at the top of your README.
 >
 ## Installation
-> In order to install a GINS-downloaded project, `git clone` the repo to a directory you own. Then run the `setup<OS>.py` file corresponding to your OS. For Linux or Mac users, one of these options must be added to the command:
-```
--b - Bash shell
--c - C shell
--f - fish shell
--t - TCSH
--z - Z shell
--k - Korn Shell
-```
+> In order to install a GINS-downloaded project, `git clone` the repo to a directory you own. Then run the `setup<OS>.py` file corresponding to your OS.
 > If your preferred shell isn't on here, go over to the Issues page and put on an issue!
 > This file will create a new directory in your home directory (`.gins`) if it does not already exist and edit your `site_packages` to make it so you can import the package. The home directory is as follows:
 > - For Linux users, this is `/home/username`.
