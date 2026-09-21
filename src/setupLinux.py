@@ -1,7 +1,7 @@
 import sys, subprocess, tomllib, os, site
 from pathlib import Path
 from shutil import rmtree, copy
-
+ 
 try:
     from rich.console import Console
     from rich.theme import Theme
