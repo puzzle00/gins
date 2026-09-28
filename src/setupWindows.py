@@ -8,7 +8,7 @@ try:
     from rich.prompt import Confirm
 except ImportError:
     print("Rich package not found. Installing it now...")
-    subprocess.run([sys.executable, "-m", "pip", "install", "rich", "--break-system-packages"]) # SYSTEM
+    subprocess.run([sys.executable, "-m", "pip", "install", "rich", ]) # SYSTEM
     from rich.console import Console
     from rich.theme import Theme
 
@@ -51,7 +51,7 @@ def pipin(package):
     """ Install a package from Pip """
     cons.log(f"Installing {package} from Pip...", style="info")
     try:
-        exit_code=subprocess.run([sys.executable, "-m", "pip", 'install', package, "--break-system-packages"]).returncode # SYSTEM
+        exit_code=subprocess.run([sys.executable, "-m", "pip", 'install', package, ]).returncode # SYSTEM
         if exit_code!=0:
             cons.log(f"Error while Pip installing {package}", style="danger")
             sys.exit(1)
