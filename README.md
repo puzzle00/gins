@@ -10,7 +10,7 @@ projectname="myproject" # Required; put your project's package name in here.
 filenames=[ # required
 "__init__.py",
 "whatever.py",
-"quokka/*.py" # Put your file list in here, wildcards are OK!
+"quokka/boogle.py" # Put your file list in here, no wildcards. ALWAYS, repeat, ALWAYS, use Linux-style paths. No backslashes.
 ]
 dependencies=[
 "pip:yourproject", # For pip projects, prepend the project name (No PPAs for now) with "pip:"
