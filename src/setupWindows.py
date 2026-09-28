@@ -1,5 +1,5 @@
 import sys, subprocess, tomllib, os, site
-from pathlib import Path
+from pathlib import Path, PurePosixPath
 from shutil import rmtree, copy
  
 try:
@@ -98,14 +98,15 @@ def stuff(files, pname): # THIS WHOLE FUNCTION IS SYSTEM
     """Stuffs the package"""
     cons.log("Installing package...", style="info")
     try:
-        inst_path=Path.home()/f".gins\\{pname}" #SYSTEMV
+        inst_path=Path.home() / ".gins" / pname" #SYSTEMV
         inst_path.mkdir(parents=True, exist_ok=True)
         if do_we_have_it(pname):
             if Confirm.ask(f"{pname} already exists. Reinstall?" , console=cons):
                 rmtree(inst_path)
                 inst_path.mkdir(parents=True, exist_ok=True)
         for i in files:
-            copy(f"..\\{i}",inst_path / i.split("/")[-1])
+            lpth=PurePosixPath(i)
+            copy(Path("..")/lpth, inst_path / lpth)
     except Exception as e:
         cons.log(f"An error ocurred when installing: {e}", style="danger")
         sys.exit(1)
