@@ -41,7 +41,7 @@ def ginstall(package_url):
     cons.log("Package cloned.", style="success")
     try:
         cons.log(f"Running setup.py file for {package_url}...", style="info")
-        subprocess.run([sys.executable, "..\\package\\gins\\setupLinux.py", "-I"]) # SYSTEMV
+        subprocess.run([sys.executable, "..\\package\\gins\\setupWindows.py", "-I"]) # SYSTEMV
     except Exception as e:
         cons.log(f"An error occurred while running the dependency's setup file that was not caught: {e}",style='danger')
         sys.exit(1)
