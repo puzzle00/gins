@@ -1,0 +1,10 @@
+Short Design Document
+
+Current Milestone: Gins 0 Full
+
+Next Milestones:
+
+Gins 1.0 - Create uninstallation scripts
+|- Gins 0.1 Make internal view 
+|
+Gins 2.0 - Create Ginsupdate
