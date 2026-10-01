@@ -3,7 +3,7 @@
 
 ***
 
-**Current Milestone:** `Gins 0 Crossplatform`
+**Current Milestone:** `Gins 0.1`
 
 ***
 
