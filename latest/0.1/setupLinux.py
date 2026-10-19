@@ -1,7 +1,11 @@
 import sys, subprocess, tomllib, os, site
 from pathlib import Path
 from shutil import rmtree, copy
- 
+
+# NEW CHANGES: THE GREPO FORMAT
+
+import json
+
 try:
     from rich.console import Console
     from rich.theme import Theme
@@ -18,9 +22,11 @@ custom_theme = Theme(
 )
 cons = Console(theme=custom_theme)
 internal=False
+
 def printifnoti(*args,**kwargs):
     if not internal:
         cons.log(*args,**kwargs)
+
 def parse_gpth():
     """ GPTH to dict stuff """
     printifnoti("Parsing gpth file...", style="info")
@@ -126,6 +132,16 @@ def edit_config(files, pname):
     mode='a' if os.path.exists(pathpath) else 'w'
     with open(pathpath, mode, encoding="utf-8") as f:
         f.write(ginspath+"\n")
+
+    # NEW CHANGES: THE GREPO FORMAT
+    grepoloc=Path.home()/".GREPO.json"
+    if not grepoloc.exists():
+        with open(grepoloc,"w") as f:
+            json.dump([],f)
+    combinedpath=ginspath/pname
+    grepodata={"name":pname,"location":combinedpath.as_posix()}
+    with open(grepoloc,'r') as f:
+        olddata=json.load(f)
     
 def main():
     global internal
